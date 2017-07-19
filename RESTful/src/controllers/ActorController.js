@@ -1,5 +1,5 @@
-import Movies from '../../data/Movies'
-import Actors from '../../data/Actors'
+import Movies from '../data/Movies'
+import Actors from '../data/Actors'
 import { toLink } from '../utilities/toLink'
 
 function toActorResource(req, actor) {

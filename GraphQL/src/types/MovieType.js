@@ -6,8 +6,8 @@ import {
   GraphQLInt,
   GraphQLFloat
 } from 'graphql';
-import Actors from '../../data/Actors'
-import Movies from '../../data/Movies'
+import Actors from '../data/Actors'
+import Movies from '../data/Movies'
 import ActorType from './ActorType';
 
 const MovieType = new GraphQLObjectType({

@@ -1,3 +1,13 @@
+const API_URL = 'http://localhost:3000/movies';
+const MOVIES_AND_ACTORS_URL = 'http://localhost:3000/moviesAndActors';
+
+$(document).ready( _ => {
+  console.log('document ready');
+  debugger
+  // fetchDataV1();
+  // fetchDataV2();
+  fetchDataV3();
+});
 
 function getActorId(actor) {
   return 'actor' + actor.name.split(' ').pop();
@@ -30,17 +40,6 @@ function buildMovieElement(movie) {
 `;
   return movie.title;
 }
-
-const API_URL = 'http://localhost:3000/movies';
-const MOVIES_AND_ACTORS_URL = 'http://localhost:3000/moviesAndActors';
-
-$(document).ready( _ => {
-  console.log('document ready');
-  debugger
-  // fetchDataV1();
-  // fetchDataV2();
-  fetchDataV3();
-});
 
 function fetchDataV1() {
   $.get(API_URL, movieLinks => {
@@ -91,7 +90,6 @@ const query = `
 
 function fetchDataV3() {
   const url = `http://localhost:5000?query=${query}`;
-  console.log(url);
   $.get(url, res => {
     console.log(res.data);
     renderRoot(res.data.movies);

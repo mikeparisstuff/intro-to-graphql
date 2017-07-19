@@ -1,0 +1,45 @@
+type Movie {
+  id: ID!
+  title: String!
+  image: String!
+  release_year: Int
+  tags: [String]
+  rating: Float
+  actors: [Actor]
+}
+
+type Actor {
+  id: ID!
+  name: String!
+  image: String!
+  dob: String
+  num_credits: Int
+  movies: [Movie]
+}
+
+# the schema allows the following query:
+type Query {
+  movie(id: ID!): Movie
+  movies: [Movie]
+  searchMovies(term: String): [Movie]
+  actor(id: ID!): Actor
+  actors: [Actor]
+  searchActors(term: String): [Actor]
+}
+
+# this schema allows the following mutation:
+type Mutation {
+  upvoteMovie (
+    movieId: ID!
+  ): Movie
+  downvoteMovie (
+    movieId: ID!
+  ): Movie
+}
+
+# we need to tell the server which types represent the root query
+# and root mutation types. We call them RootQuery and RootMutation by convention.
+schema {
+  query: Query
+  mutation: Mutation
+}

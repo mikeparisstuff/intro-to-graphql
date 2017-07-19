@@ -5,7 +5,7 @@ import {
   GraphQLList,
   GraphQLInt
 } from 'graphql';
-import Movies from '../../data/Movies'
+import Movies from '../data/Movies'
 import MovieType from './MovieType';
 
 const ActorType = new GraphQLObjectType({
