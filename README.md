@@ -1,4 +1,4 @@
-# Rest 2.0 is Here and its Name is GraphQL
+# Introduction to GraphQL
 
 Brief description of the article and what it covers.
 Link to article on SitePoint (if known).
